@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- for fontawesome -->
+    <script src="https://kit.fontawesome.com/39bd3d6313.js" crossorigin="anonymous"></script>
+    <title> Valinteca Task  </title>
+    <script>
+        function Delete(e){
+			let items = [];
+			JSON.parse(localStorage.getItem('items')).map(data=>{
+				if(data.name != e.parentElement.parentElement.children[0].textContent){
+					
+					items.push(data);
+
+				}
+			});
+			localStorage.setItem('items',JSON.stringify(items));
+			window.location.reload();
+    };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header class="nav" >
+            <p class="logo" > Online Shopping </p>
+            <div class="add-cart" >
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p id="counter" >  0 </p>
+            </div>
+        </header>
+        <section id="content" >
+            <!-- add by Js --> 
+        </section>
+        <div class="cartBox">
+            <div class="cart">
+                <i class="fa fa-close"></i>
+                <h1>Cart</h1>
+                <table></table>
+            </div>
+	    </div>
+    </div>
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html>
